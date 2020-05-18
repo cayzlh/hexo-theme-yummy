@@ -111,9 +111,6 @@ top:
 
 rss:
   enable: true
-  powerby:
-    name: Q2F5emxo
-    url: https://cayzlh.github.io
 
 archive:
   title: All My Blogs
