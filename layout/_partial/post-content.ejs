@@ -5,7 +5,9 @@
             <%- partial('_partial/post-starting') %>
             <%- page.content %>
             <!-- 文章结尾部分 -->
-            <%- partial('_partial/post-ending') %>
+            <% if (theme.postending.enable) { %>
+                <%- partial('_partial/post-ending') %>
+            <% } %>
         </div>
         <%
         var topic = toc(page.content);

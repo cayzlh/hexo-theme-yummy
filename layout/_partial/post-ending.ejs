@@ -1,7 +1,10 @@
-<div style="text-align:center;width:100%">
-    <img src="https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/uPic/640-2.gif">
-</div>
+<% if (theme.postending.image) { %>
+    <div style="text-align:center;width:100%">
+        <img src="https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/uPic/640-2.gif">
+    </div>
+<% } %>
 
+<% if (theme.postending.declaration) { %>
 <div>
     <blockquote>
         <ul class="post-copyright">
@@ -30,3 +33,4 @@
         </ul>
     </blockquote>
 </div>
+<% } %>
