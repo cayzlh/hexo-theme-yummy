@@ -127,6 +127,13 @@ category:
     title: Git相关文章
     subtitle: git操作相关的文章
 
+# 标签页面设置，用于指定标签的元素的展示
+tag:
+  enable: false
+  Docker:
+    title: Docker~~~
+    subtitle: docker~~~
+
 # copyright
 copyright:
   enable: true

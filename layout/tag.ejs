@@ -2,11 +2,11 @@
     <div class="container">
         <div id="jumbotron-meta-info">
             <%
-            var title = page.category;
-            var subtitle = "分类于[ " + page.category + " ]的文章";
-            if (theme.category.enable) {
-                var key = page.category;
-                var c = theme.category[key];
+            var title = page.tag;
+            var subtitle = "标签为[ " + page.tag + " ]的文章";
+            if (theme.tag.enable) {
+                var key = page.tag;
+                var c = theme.tag[key];
                 if ( c ) {
                     title = c.title;
                     subtitle = c.subtitle;
@@ -15,7 +15,7 @@
             %>
             <h1><%= title %></h1>
             <span class="meta-info">
-                    <span class="mega-octicon octicon-clippy"></span>
+                    <span class="mega-octicon octicon-bookmark"></span>
                     <%= subtitle %>
             </span>
         </div>
