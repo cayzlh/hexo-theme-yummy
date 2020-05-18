@@ -1,0 +1,134 @@
+# 页面右上方的几个链接，key随便写。
+topbar:
+  homepage:
+    name: 导航页
+    url: https://cayzlh.github.io
+  github:
+    name: GitHub
+    url: https://github.com/cayzlh
+    target: _blank
+  about:
+    name: 关于
+    url: /about
+
+# 菜单配置，Key随便写，支持子菜单
+menu:
+  Home:
+    url: /
+    name: 首页
+  Archives:
+    url: /archives
+    name: 归档
+  Tools:
+    url: /
+    name: 在线工具
+    children:
+      - name: Json在线工具
+        url: https://cayzlh.github.io/tools/online-JSONFormat/
+      - name: Markdown在线转换工具
+        url: https://cayzlh.github.io/tools/online-markdown/
+
+# slogan 和 下面的一排链接配置，不配不显示
+jumbotron:
+  slogan: 记录成长路上的风景
+  infos:
+    - name: 富强
+      url: /
+    - name: 民主
+      url: /
+    - name: 文明
+      url: /
+    - name: 和谐
+      url: /
+    - name: 自由
+      url: /
+    - name: 平等
+      url: /
+    - name: 公正
+      url: /
+    - name: 法制
+      url: /
+    - name: 爱国
+      url: /
+    - name: 敬业
+      url: /
+    - name: 诚信
+      url: /
+    - name: 友善
+      url: /
+
+# 社交链接，icon 和 txt 二选一
+social:
+  - url: https://github.com/cayzlh
+    target: _blank
+    icon: fa-github
+    txt:
+  - url: https://twitter.com/Q2F5emxo
+    target: _blank
+    icon: fa-twitter
+    txt:
+  - url: mailto:chenanyu@cayzlh.com
+    target: _blank
+    icon:
+    txt: 邮
+
+# 博客的favicon图标，支持各种格式
+favicon: /favicon.svg
+
+# 展示精选文章, 需在文章中添加 favorite: true 属性
+favorites:
+  enable: true # 是否展示精选文章
+  title: 精选文章 # 标题
+  num: 6  # 展示多少个， 建议不要太多
+
+# 展示开源项目（GitHub）
+openSource:
+  enable: false # 是否展示
+  title: 开源软件
+  username: cayzlh # github用户名，用于展示stars 和 forks数
+  repos:
+    - url: https://github.com/cayzlh/hexo-theme-yummy
+      name: hexo-theme-yummy # repo的名称，一定要填对
+      title: hexo-theme-yummy # 展示到页面的名称
+      description: 移植自Jekyll的一款hexo主题
+
+# 是否白嫖cdn加速，本地调试样式之类的记得设置成false
+jsDelivr:
+  enable: true
+  url: https://cdn.jsdelivr.net/gh/cayzlh/blog@master # 记得要替换成你的地址
+
+# google相关配置
+google:
+  analytics:  # google 分析
+    enable: false
+    id: # google analytics ID
+  verification: # 验证
+    enable: false
+    id: # google 站点验证，填你的
+
+ICP: # 京ICP备123456789号
+
+top:
+  enable: true # 是否开启回到最上面
+
+# 是否展示页面左下角的rss区域
+rss:
+  enable: true
+
+# 自定义归档页面的标题和副标题
+archive:
+  title: All My Blogs
+  subtitle: Record the scenery on the road of growth
+
+# 分类页面设置，用于指定分类页的元素的展示
+category:
+  enable: false
+  Git: # 每个Key要写对应分类的名称，比如分类为Git的页面就如案例所示配置
+    title: Git相关文章
+    subtitle: git操作相关的文章
+
+# copyright
+copyright:
+  enable: true
+  name: Q2F5emxo
+  since: 2020
