@@ -18,3 +18,19 @@
 
     });
 </script>
+<article class="post container">
+    <ul class="archives-list">
+        <%
+        var tags = [];
+
+        site.tags.each(function (tag) {
+            tags.push(tag);
+        });
+        %>
+        <% tags.forEach(function (tag) { %>
+            <li>
+                <a href="<%- url_for(tag.path) %>" target="_blank"><%= tag.name %> ( <%= tag.length %> )</a>
+            </li>
+        <% }); %>
+    </ul>
+</article>
