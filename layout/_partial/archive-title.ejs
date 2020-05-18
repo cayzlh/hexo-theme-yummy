@@ -1,0 +1,20 @@
+<section class="jumbotron geopattern" data-pattern-id="All articles are here">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <h1><%= theme.archive.title %></h1>
+            <span class="meta-info">
+                    <span class="mega-octicon octicon-calendar"></span>
+                    <%= theme.archive.subtitle %>
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function () {
+
+        $('.geopattern').each(function () {
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>

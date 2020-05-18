@@ -1,0 +1,22 @@
+<% if (theme.social) { %>
+    <div class="card text-center">
+        <ul class="list-inline" style="margin-left: 0;">
+            <% theme.social.forEach(function (soc) { %>
+                <li>
+                    <a
+                    <% if(soc.target) { %>
+                        target="<%- soc.target %>"
+                            <% } %>
+                        href="<%- soc.url %>">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa <% if(soc.icon) { %><%- soc.icon %><% } %> fa-stack-1x fa-inverse">
+                                <% if(soc.txt) { %><%- soc.txt %><% } %>
+                            </i>
+                          </span>
+                    </a>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+<% } %>

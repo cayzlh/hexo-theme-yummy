@@ -1,0 +1,39 @@
+<%
+    // get all favorites post
+    var favoritePosts = [];
+    site.posts.each(function (post) {
+        if (post.favorite) {
+            favoritePosts.push(post);
+        }
+    });
+    var favoriteLength = favoritePosts.length;
+    if (theme.favorites && theme.favorites.num && favoriteLength > theme.favorites.num) {
+        favoriteLength = theme.favorites.num;
+    }
+%>
+<% if (theme.favorites.enable && favoriteLength > 0) { %>
+    <h3 class="sidebar-title"><%- theme.favorites.title %></h3>
+
+        <% for(var i = 0; i < favoriteLength; i++) { %>
+            <%
+                var post = favoritePosts[i];
+            %>
+            <div class="card text-center">
+                <div class="thumbnail">
+                    <div class="card-image geopattern" data-pattern-id="<%- post.title %>">
+                        <div class="card-image-cell">
+                            <h3 class="card-title">
+                                <a href="<%- url_for(post.path) %>"
+                                   target="_blank"><%- post.title %></a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="caption">
+                        <div class="card-description">
+                            <p class="card-text"><%- post.description %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+<% } %>

@@ -1,0 +1,13 @@
+<div class="topbar-menu">
+
+    <% Object.keys(theme.topbar).forEach(function(key) { %>
+        <div class="item">
+            <a href="<%- url_for(theme.topbar[key].url) %>"
+               <% if (theme.topbar[key].target) { %>target="<%- theme.topbar.target %>" <% } %>
+               title="<%- theme.topbar[key].name %>">
+                <%- theme.topbar[key].name %>
+            </a>
+        </div>
+    <% }); %>
+
+</div>

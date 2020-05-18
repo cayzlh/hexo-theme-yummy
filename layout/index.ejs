@@ -1,0 +1,44 @@
+<!--<div class="content">-->
+<%- partial('_partial/jumbotron') %>
+<section class="content container">
+    <div class="row">
+
+        <div class="col-md-8">
+            <!-- Post List -->
+            <%- partial('_partial/post-list') %>
+
+            <!-- Pagination -->
+            <%- partial('_partial/paginator') %>
+        </div>
+
+        <div class="col-md-4">
+
+            <!-- Social Button -->
+            <%- partial('_partial/social-sidebar') %>
+
+            <!-- Favorites List -->
+            <%- partial('_partial/favorites-sidebar') %>
+
+            <!-- open source -->
+            <%- partial('_partial/opensource-sidebar') %>
+
+            <script>
+                $(document).ready(function () {
+
+                    // Enable bootstrap tooltip
+                    $("body").tooltip({selector: '[data-toggle=tooltip]'});
+
+                    $('.geopattern').each(function () {
+                        $(this).geopattern($(this).data('pattern-id'));
+                    });
+
+                });
+            </script>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--</div>-->

@@ -1,93 +1,132 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+topbar:
+  homepage:
+    name: 导航页
+    url: https://cayzlh.github.io
+  github:
+    name: GitHub
+    url: https://github.com/cayzlh
+    target: _blank
+  about:
+    name: 关于
+    url: /about
 
-# Site settings
-title: Yummy Theme # ex. I m Chuan
-name: Your Name # ex. DONGChuan
-email: my_email_address@lalala.com
-location: My location # ex. Nice, France
-company: MyCompany
-company_url: my_company_website
-github_url: my_github_url # ex. https://github.com/DONGChuan
-github_username: # ex. DONGChuan
-description: description_of_your_web_site
-favicon: favicon.png # Image must be in assets/images
-repository: github_username/github_username.github.io # ex. DONGChuan/DONGChuan.github.io
+menu:
+  Home:
+    url: /
+    name: 首页
+  Archives:
+    url: /archives
+    name: 归档
+  Tools:
+    url: /
+    name: 在线工具
+    children:
+      - name: Json在线工具
+        url: https://cayzlh.github.io/tools/online-JSONFormat/
+      - name: Markdown在线转换工具
+        url: https://cayzlh.github.io/tools/online-markdown/
 
-# The base hostname & protocol for your site
-# For local test, please use http://localhost:4000
-# For production, use your github page url. ex. http://dongchuan.github.io
-url: http://localhost:4000
+jumbotron:
+  slogan: 记录成长路上的风景
+  infos:
+    - name: 富强
+      url: /
+    - name: 民主
+      url: /
+    - name: 文明
+      url: /
+    - name: 和谐
+      url: /
+    - name: 自由
+      url: /
+    - name: 平等
+      url: /
+    - name: 公正
+      url: /
+    - name: 法制
+      url: /
+    - name: 爱国
+      url: /
+    - name: 敬业
+      url: /
+    - name: 诚信
+      url: /
+    - name: 友善
+      url: /
 
-## Gem
-gems:
-  - jekyll-paginate
-  - jekyll-geo-pattern
-  - rouge
-  - kramdown
-  - jekyll-github-metadata
+social:
+  - url: https://github.com/cayzlh
+    target: _blank
+    icon: fa-github
+    txt:
+  - url: https://twitter.com/Q2F5emxo
+    target: _blank
+    icon: fa-twitter
+    txt:
+  - url: mailto:chenanyu@cayzlh.com
+    target: _blank
+    icon:
+    txt: 邮
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
-lsi:         false
-excerpt_separator: "\n\n"
+favicon: /favicon.svg
 
-source:      .
-destination: ./_site
+# 展示精选文章, 需在文章中添加 favorite: true 属性
+favorites:
+  enable: true # 是否展示精选文章
+  title: 精选文章 # 标题
+  num: 6  # 展示多少个， 建议不要太多
 
-quiet:    false
-defaults: []
+# 展示开源项目（GitHub）
+openSource:
+  enable: false
+  title: 开源软件
+  username: cayzlh # github用户名，用于展示stars 和 forks数
+  repos:
+    - url: https://github.com/cayzlh/cayzlh-starters
+      name: cayzlh-starters # repo的名称，一定要填对
+      title: cayzlh-starters # 展示到页面的名称
+      description: 由个人封装的一些springboot starter项目
+    - url: https://github.com/cayzlh/cayzlh.github.io
+      name: cayzlh.github.io
+      title: cayzlh.github.io
+      description: 个人导航页
 
-kramdown:
-  input: GFM
-  enable_coderay: true
+# 是否白嫖cdn加速，本地调试样式之类的记得设置成false
+jsDelivr:
+  enable: true
+  url: https://cdn.jsdelivr.net/gh/cayzlh/blog@master
 
-# Disque
-disque: my_disque_settings # ex. httpdongchuangithubio.disqus.com
+google:
+  analytics:
+    enable: true
+    id: UA-129095667-1
+  verification:
+    enable: true
+    id: VrcbMTVpFGlHkIERHBt753dAtXKF4qirjnDweuXSRJw
 
-# Pagination
-paginate: 10
-paginate_path: 'page:num'
+ICP: # 京ICP备123456789号
 
-# Navigation. If you do not like these modules, just remove them :D
-navs:
-  -
-    href: /
-    label: Home
+top:
+  enable: true # 是否开启回到最上面
 
-  -
-    href: /open-source
-    label: Open-Source
+rss:
+  enable: true
+  powerby:
+    name: Q2F5emxo
+    url: https://cayzlh.github.io
 
-  -
-    href: /blog
-    label: Blog
+archive:
+  title: All My Blogs
+  subtitle: Record the scenery on the road of growth
 
-  -
-    href: /bookmark
-    label: Bookmark
+# 分类页面设置，用于指定分类页的元素的展示
+category:
+  enable: false
+  Git: # 每个Key要写对应分类的名称
+    title: Git相关文章
+    subtitle: git操作相关的文章
 
-  -
-    href: /about
-    label: About
-
-# Sidebar to show popular repo
-side_bar_repo_limit: 5 # Number of repos to show
-
-# Google Analytics
-analytics :
-  provider : google
-  google :
-      tracking_id : 'tracking_id'  # ex. UA-72165600-X
-
-
-# For about.html. Fell free to create your own!
-skill_software_keywords: [Java, C, C++, Qt, Python, MySQL, Oracle, SQLite, PL/SQL, Design Patterns]
-skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
-skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, NodeJS, ExpressJS, MongoDB, Redis, PHP, Symfony, Boostrap]
-skill_mobile_app_keywords: [Android, Sketch UI Desgin]
+copyright:
+  enable: true
+  name: Q2F5emxo
+  since: 2020

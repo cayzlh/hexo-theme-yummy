@@ -1,0 +1,49 @@
+<footer class="container">
+    <div class="site-footer">
+        <%- partial('_partial/social-sidebar') %>
+
+        <div class="site-footer-links mobile-hidden">
+            <% if(theme.copyright.enable) { %>
+                <span class="meta-info-index hvr-grow"><%- theme.copyright.name %> &copy; <%- theme.copyright.since %></span>
+            <% } %>
+        </div>
+
+        <% if(theme.ICP) { %>
+            <div class="site-footer-icons">
+                <a href="http://beian.miit.gov.cn"><%= theme.ICP %></a>
+            </div>
+        <% } %>
+
+        <% if(theme.top.enable) { %>
+            <div class="scrolltop">
+                <a href="javascript:window.scrollTo(0,0)">TOP</a>
+            </div>
+        <% } %>
+
+        <% if(theme.rss.enable) { %>
+        <div class="rss">
+            <a href="<%- url_for("/atom.xml") %>" target="_blank"><span class="octicon octicon-rss" style="color:orange;"></span></a>
+            Power by <a href="<%- theme.rss.powerby.url %>" target="_blank"><%= theme.rss.powerby.name %></a>
+        </div>
+        <% } %>
+    </div>
+    <%
+    var cdnable = theme.jsDelivr.enable;
+    %>
+
+    <% if (cdnable) { %>
+        <!-- Third-Party JS -->
+        <script type="text/javascript"
+                src="<%- theme.jsDelivr.url %>/js/thirdparty/geopattern.min.js"></script>
+        <!-- My JS -->
+        <script type="text/javascript" src="<%- theme.jsDelivr.url %>/js/script.js"></script>
+    <% } else { %>
+        <!-- Third-Party JS -->
+        <script type="text/javascript"
+                src="<%- url_for("/js/thirdparty/geopattern.min.js") %>"></script>
+        <!-- My JS -->
+        <script type="text/javascript" src="<%- url_for("/js/script.js") %>"></script>
+    <% } %>
+
+
+</footer>

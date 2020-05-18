@@ -1,0 +1,79 @@
+<section class="jumbotron geopattern" data-pattern-id="All articles are here">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <%
+            var title = "分类于[ " + page.category + " ]的文章";
+            var subtitle = "Record the scenery on the road of growth";
+            if (theme.category.enable) {
+                var key = page.category;
+                var c = theme.category[key];
+                if ( c ) {
+                    title = c.title;
+                    subtitle = c.subtitle;
+                }
+            }
+            %>
+            <h1><%= title %></h1>
+            <span class="meta-info">
+                    <span class="mega-octicon octicon-clippy"></span>
+                    <%= subtitle %>
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function () {
+
+        $('.geopattern').each(function () {
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+<article class="post container">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <ul id="posts-list">
+                <%
+                var posts = [];
+
+                page.posts.each(function (post) {
+                    posts.push(post);
+                });
+
+                var sortPosts = _[_.orderBy ? 'orderBy' : 'sortByOrder'](posts, ['date'], ['desc']);
+                %>
+                <% sortPosts.forEach(function (post) { %>
+                    <li class="posts-list-item">
+                        <div class="posts-content">
+                            <span class="posts-list-meta"><%= post.date.format('YYYY-MM-DD') %></span>
+                            <% if (post.link){ %>
+                                <a class="posts-list-name bubble-float-left"
+                                   href="<%- url_for(post.link) %>"><%= post.title %></a>
+                            <% } else { %>
+                                <a class="posts-list-name bubble-float-left"
+                                   href="<%- url_for(post.path) %>"><%= post.title %></a>
+                            <% } %>
+
+                            <span class="circle"></span>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            // Enable bootstrap tooltip
+            $("body").tooltip({selector: '[data-toggle=tooltip]'});
+
+        });
+    </script>
+
+
+</article>

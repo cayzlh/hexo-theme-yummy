@@ -1,0 +1,29 @@
+<nav class="site-header-nav" role="navigation">
+    <% Object.keys(theme.menu).forEach(function(key) { %>
+        <div class=" site-header-nav-item hvr-underline-from-center">
+            <a href="<%- url_for(theme.menu[key].url) %>"
+               <% if (theme.menu[key].target) { %>target="<%- theme.menu[key].target %>"
+                    <% } %>
+               title="<%- theme.menu[key].name %>">
+                <%- theme.menu[key].name %>
+            </a>
+            <% if (theme.menu[key].children) { %>
+                <ul class="submenu">
+                    <% for(let childrenLink of theme.menu[key].children){ %>
+
+                        <li>
+                            <a href="<%- url_for(childrenLink.url) %>"
+                            <% if (childrenLink.targrt) { %>
+                               target="<%- childrenLink.target %>"
+                                    <% } %>
+                            >
+                                <span><%- childrenLink.name %></span>
+                            </a>
+                        </li>
+
+                    <% } %>
+                </ul>
+            <% } %>
+        </div>
+    <% }); %>
+</nav>

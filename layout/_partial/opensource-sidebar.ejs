@@ -1,0 +1,31 @@
+<% if (theme.openSource.enable) { %>
+    <h3 class="sidebar-title"><%- theme.openSource.title %></h3>
+    <% for(let repo of theme.openSource.repos) { %>
+        <div class="card text-center">
+            <div class="thumbnail">
+                <div class="card-image geopattern" data-pattern-id="spring-boot-examples">
+                    <div class="card-image-cell">
+                        <h3 class="card-title">
+                            <a href="<%- repo.url %>" target="_blank"><%= repo.title %></a>
+                        </h3>
+                    </div>
+                </div>
+                <div class="caption">
+                    <div class="card-description">
+                        <p class="card-text"><%= repo.description %> </p>
+                    </div>
+                    <div class="card-text">
+                        <span data-toggle="tooltip" class="meta-info" title="stars">
+                            <img alt="GitHub stars"
+                                 src="<%- url_for("https://img.shields.io/github/stars/" + theme.openSource.username + "/" + repo.name + "?style=social") %>">
+                        </span>
+                        <span data-toggle="tooltip" class="meta-info" title="forks">
+                            <img alt="GitHub forks"
+                                 src="<%- url_for("https://img.shields.io/github/forks/" + theme.openSource.username + "/" + repo.name + "?style=social") %>">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+<% } %>

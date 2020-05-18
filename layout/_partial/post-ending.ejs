@@ -1,0 +1,32 @@
+<div style="text-align:center;width:100%">
+    <img src="https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/uPic/640-2.gif">
+</div>
+
+<div>
+    <blockquote>
+        <ul class="post-copyright">
+            <li class="post-copyright-author">
+                <strong>文章来源： </strong>
+                <%
+                var url = page.author && page.author.link ? page.author.link : page.permalink;
+                var nick = page.author && page.author.nick ? page.author.nick : config.author;
+                %>
+                <a href="<%- url_for(url) %>"
+                   title="<%- nick %>"
+                   rel="noopener external nofollow noreferrer"
+                   target="_blank"><%= nick %></a></li>
+            <li class="post-copyright-link">
+                <strong>文章链接：</strong>
+                <a href="<%- url_for(page.permalink) %>"
+                   title="<%- url_for(page.title) %>"><%= page.permalink %></a>
+            </li>
+            <li class="post-copyright-license">
+                <strong>版权声明： </strong>
+                文章内容仅用作学习和分享，采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+                   rel="noopener external nofollow noreferrer" target="_blank"><i
+                            class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议，如有雷同，纯属拷贝。
+            </li>
+        </ul>
+    </blockquote>
+</div>

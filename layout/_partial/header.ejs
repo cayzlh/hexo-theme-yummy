@@ -1,0 +1,15 @@
+<header class="site-header">
+    <div class="site-header-topbar">
+        <div class="container">
+            <%- partial('_partial/topbar-menu') %>
+        </div>
+    </div>
+    <div class="container">
+        <a id="site-header-brand" href="<%= url_for() %>" title="<%- config.title %>">
+            <span class="octicon octicon-mark-github"></span>
+            <%= config.title %>
+        </a>
+
+        <%- partial('_partial/site-header') %>
+    </div>
+</header>

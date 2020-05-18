@@ -1,0 +1,34 @@
+<article class="post container">
+    <ul class="archives-list">
+        <%
+        var posts = [];
+
+        site.posts.each(function (post) {
+            posts.push(post);
+        });
+
+        var sortPosts = _[_.orderBy ? 'orderBy' : 'sortByOrder'](posts, ['date'], ['desc']);
+        %>
+
+        <%
+        var y = 0;
+        sortPosts.forEach(function (post) {
+            var dt = post.date;
+            var ny = post.date.year();
+
+            if (ny !== y) {
+                y = ny;
+        %>
+                <h3><%= y %></h3>
+        <% } %>
+            <li>
+                <span><%=dt.format('MM-DD')%></span>
+                <% if (post.link){ %>
+                    <a href="<%- url_for(post.link) %>" target="_blank"><%= post.title %></a>
+                <% } else { %>
+                    <a href="<%- url_for(post.path) %>" target="_blank"><%= post.title %></a>
+                <% } %>
+            </li>
+        <% }) %>
+    </ul>
+</article>

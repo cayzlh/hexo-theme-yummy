@@ -1,0 +1,15 @@
+<% if (theme.jumbotron.infos) { %>
+    <% for(let info of theme.jumbotron.infos){ %>
+        <span class="meta-info-index hvr-grow">
+                        <a href="<%- url_for(info.url) %>"
+                        <% if (info.targrt) { %>
+                           target="<%- info.target %>"
+                                <% } %>
+                           title="<%- info.title %>"
+                        >
+                                <span><%- info.name %></span>
+                            </a>
+                    </span>
+
+    <% } %>
+<% } %>

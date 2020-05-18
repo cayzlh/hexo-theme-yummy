@@ -1,0 +1,18 @@
+<ol class="post-list">
+
+    <% page.posts.each(function (post) { %>
+        <li class="post-list-item">
+            <h2 class="post-list-title">
+                <a class="hvr-underline-from-center"
+                   href="<%- url_for(post.path) %>"><%= post.title %></a>
+            </h2>
+            <p class="post-list-description">
+                <%= post.description %>
+            </p>
+            <p class="post-list-meta">
+                <span class="octicon octicon-calendar"></span> <%= date(post.date, "YYYY-MM-DD") %>
+            </p>
+        </li>
+    <% }); %>
+
+</ol>
