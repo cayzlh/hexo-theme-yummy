@@ -336,6 +336,50 @@ busuanzi:
     pv: true # 展示文章阅读次数
 ```
 
+### 评论系统
+
+以下评论插件一支持
+
+- gitalk
+- gitment
+- valine
+
+配置文件，开启其中一个即可。
+
+```yml
+# 评论系统，开启相应的评论系统， 将会在你的文章下方展示评论，也可以用文章属性 comments 来控制
+comment:
+  enable: false  # 是否开启
+  gitalk: # gitalk
+    enable: false
+    owner: # '你的 GitHub ID',
+    repo: # '存储评论的 repo',
+    oauth:
+      clientId: # '你的 client ID'
+      clientSecret: # '你的 client secret',
+    admin:
+  gitment: # gitment
+    enable: false
+    owner: # '你的 GitHub ID',
+    repo: # '存储评论的 repo',
+    oauth:
+      client_id: # '你的 client ID'
+      client_secret: # '你的 client secret',
+  valine: # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
+    enable: false
+    appId: # 你的appid
+    appKey: # 你的appkey
+    notify: false
+    verify: false
+    visitor: true
+    avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+    pageSize: 10
+    placeholder: 'just go go' # Comment Box placeholder
+    guest_info: nick,link,mail # Comment header info
+```
+
+
+
 ### 其他
 
 代码过于简单，没啥好说的了。。

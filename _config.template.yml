@@ -157,7 +157,7 @@ busuanzi:
 
 # 评论系统，开启相应的评论系统， 将会在你的文章下方展示评论，也可以用文章属性 comments 来控制
 comment:
-  enable: true  # 是否开启
+  enable: false  # 是否开启
   gitalk: # gitalk
     enable: false
     owner: # '你的 GitHub ID',
