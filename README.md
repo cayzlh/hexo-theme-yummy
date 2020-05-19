@@ -44,39 +44,39 @@
 
    **否则代码样式不好看**。**否则代码样式不好看**。**否则代码样式不好看**。
 
-   - 安装插件
-   
-     ```bash
-  npm install  hexo-prism-plugin --save
-     ```
+   *安装插件*
 
-     若出现以下提示
+   ```bash
+   npm install  hexo-prism-plugin --save
+   ```
 
-     ![image-20200519101847243](https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/2020/05/19/image-20200519101847243_cljW7V.png)
+   若出现以下提示
 
-     则执行
-   
-     ```bash
-  npm audit fix
-     ```
+   ![image-20200519101847243](https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/2020/05/19/image-20200519101847243_cljW7V.png)
 
-   - 修改站点配置文件`_config.yml`，禁用hexo默认的高亮插件，添加`hexo-prism-plugin`高亮插件支持。
-   
-     ```yml
-     highlight:
-       enable: false  # 将系统原来的高亮插件设置为false
-       line_number: false
-       auto_detect: false
-       tab_replace: ''
-       wrap: true
-       hljs: false
-     # 添加以下配置启用prism插件
-     prism_plugin:
-       mode: 'preprocess'
-       theme: 'tomorrow' # 推荐使用这个
-       line_number: true    # default false 是否展示行号
-       custom_css: '/css/common.css'# 这里要配这个，否则不好看。。
-     ```
+   则执行
+
+   ```bash
+   npm audit fix
+   ```
+
+   修改站点配置文件`_config.yml`，禁用hexo默认的高亮插件，添加`hexo-prism-plugin`高亮插件支持。
+
+   ```yml
+   highlight:
+     enable: false  # 将系统原来的高亮插件设置为false
+     line_number: false
+     auto_detect: false
+     tab_replace: ''
+     wrap: true
+     hljs: false
+   # 添加以下配置启用prism插件
+   prism_plugin:
+     mode: 'preprocess'
+     theme: 'tomorrow' # 推荐使用这个
+     line_number: true    # default false 是否展示行号
+     custom_css: '/css/common.css'# 这里要配这个，否则不好看。。
+   ```
 
 ## 主题配置文件
 
@@ -98,10 +98,6 @@ topbar:
     url: /about
 ```
 
-效果：
-
-![image-20200519103556899](https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/2020/05/19/image-20200519103556899_KfMTBw.png)
-
 ### 菜单配置，支持子菜单
 
 ```yml
@@ -121,10 +117,6 @@ menu:
       - name: Markdown在线转换工具
         url: https://cayzlh.github.io/tools/online-markdown/
 ```
-
-效果：
-
-![image-20200519103622707](https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/2020/05/19/image-20200519103622707_LAeaz5.png)
 
 
 ### slogan 和 下面的一排链接
@@ -159,10 +151,6 @@ jumbotron:
       url: /
 ```
 
-效果
-
-![image-20200519104323168](https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/2020/05/19/image-20200519104323168_Q0qalv.png)
-
 ### 社交链接配置
 
 Icon和txt字段二选一
@@ -183,11 +171,7 @@ social:
     txt: 邮
 ```
 
-效果：
-
-![image-20200519104618206](https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/2020/05/19/image-20200519104618206_FyVa9R.png)
-
-页面底部也有一处显示
+显示在页面下方和首页的右侧上方
 
 ### favicon
 
