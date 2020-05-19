@@ -8,6 +8,21 @@
             <% } %>
         </div>
 
+        <div class="site-footer-links mobile-hidden">
+            <% if (theme.busuanzi.enable) { %>
+                <% if (theme.busuanzi.site.pv) { %>
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        本站总访问量<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>次
+                    </span>
+                <% } %>
+                <% if (theme.busuanzi.site.uv) { %>
+                    <span id="busuanzi_container_site_uv" style='display:none'>
+                      访客数<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>人次
+                    </span>
+                <% } %>
+            <% } %>
+        </div>
+
         <% if(theme.ICP) { %>
             <div class="site-footer-icons">
                 <a href="http://beian.miit.gov.cn"><%= theme.ICP %></a>
@@ -43,6 +58,11 @@
                 src="<%- url_for("/js/thirdparty/geopattern.min.js") %>"></script>
         <!-- My JS -->
         <script type="text/javascript" src="<%- url_for("/js/script.js") %>"></script>
+    <% } %>
+
+    <% if (theme.busuanzi.enable) { %>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+        </script>
     <% } %>
 
 

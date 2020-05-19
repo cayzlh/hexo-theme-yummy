@@ -10,13 +10,16 @@
 
 - [x] hexo主题基础功能
 - [ ] 评论系统
-- [ ] 阅读统计
+- [x] 阅读统计
 - [ ] ~文章搜索功能~
 - [ ] 相关文章推荐
 
 # TimeLine
 
 [查看更新说明](https://github.com/cayzlh/hexo-theme-yummy/releases)
+
+- 文章页添加分类和标签展示
+- 添加`busuanzi`统计，对应站点访问统计和文章访问量统计
 
 # 使用说明
 
@@ -311,6 +314,19 @@ postending:
   enable: true # 是否启用
   image: true # 是否在文章结尾显示一个图片
   declaration: true # 是否在文章结尾显示版权声明
+```
+
+### busuanzi统计
+
+```yml
+# busuanzi统计
+busuanzi:
+  enable: true
+  site: # 站点统计配置
+    pv: true # 展示站点访问次数
+    uv: true # 展示站点访问人次
+  post: # 文章统计配置
+    pv: true # 展示文章阅读次数
 ```
 
 ### 其他
