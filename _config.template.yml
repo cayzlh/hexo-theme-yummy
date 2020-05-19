@@ -94,8 +94,8 @@ openSource:
 
 # 是否白嫖cdn加速，本地调试样式之类的记得设置成false
 jsDelivr:
-  enable: true
-  url: https://cdn.jsdelivr.net/gh/cayzlh/blog@master # 记得要替换成你的地址
+  enable: false
+  url: https://cdn.jsdelivr.net/gh/yourgithubname/yourreponame@master # 记得要替换成你的地址
 
 # google相关配置
 google:
