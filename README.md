@@ -12,7 +12,7 @@
 - [x] 评论系统
 - [x] 阅读统计
 - [ ] ~文章搜索功能~
-- [ ] 相关文章推荐
+- [x] 相关文章推荐
 
 # TimeLine
 
@@ -368,7 +368,16 @@ comment:
     guest_info: nick,link,mail # Comment header info
 ```
 
+### 相关文章推荐
 
+启用相关文章推荐，在文章结尾处显示相关文章， 根据标签关联。
+
+```yml
+popular_posts:
+  enable: false
+  title: 相关推荐
+  max: 6
+```
 
 ### 其他
 

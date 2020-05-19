@@ -184,3 +184,9 @@ comment:
     pageSize: 10
     placeholder: 'just go go' # Comment Box placeholder
     guest_info: nick,link,mail # Comment header info
+
+# 启用相关文章推荐
+popular_posts:
+  enable: false
+  title: 相关推荐
+  max: 6

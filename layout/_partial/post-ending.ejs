@@ -4,6 +4,31 @@
     </div>
 <% } %>
 
+<%
+    var popPosts;
+    var max = 5;
+    if (theme.popular_posts.enable) {
+        if (theme.popular_posts.max) {
+            max = theme.popular_posts.max;
+        }
+        popPosts = popular_posts_json({ maxCount: max } , page );
+        popPosts = popPosts.json;
+    }
+%>
+<% if(theme.popular_posts.enable && popPosts && popPosts.length > 0 ) { %>
+<div>
+    <h4><%= theme.popular_posts.title %></h4>
+    <ul class="post-copyright">
+        <% popPosts.forEach(function (pop) { %>
+        <li class="post-copyright-author">
+            <a href="<%- pop.path %>"><%= pop.title %></a>
+        </li>
+        <% }); %>
+    </ul>
+    <br><br>
+</div>
+<% } %>
+
 <% if (theme.postending.declaration) { %>
 <div>
     <blockquote>
