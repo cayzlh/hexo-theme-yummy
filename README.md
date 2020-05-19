@@ -16,8 +16,7 @@
 
 # TimeLine
 
-- **2020-05-18**，完成基本功能迁移
-- ...
+[查看更新说明](https://github.com/cayzlh/hexo-theme-yummy/releases)
 
 # 使用说明
 
@@ -27,10 +26,14 @@
 
 1. 进入Hexo**站点文件夹**，克隆本主题到`themes/`路径下：
 
+   直接使用master分支，可能不稳定。 。
+
    ```bash
    # cd your hexo site directory
    git clone https://github.com/cayzlh/hexo-theme-yummy.git themes/Yummy
    ```
+
+   或者下载realease版本：[https://github.com/cayzlh/hexo-theme-yummy/releases](https://github.com/cayzlh/hexo-theme-yummy/releases)
 
 2. 重命名主题中的 `_config.example.yml` 为 `_config.yml`，然后可以使用配置文件配置主题
 
