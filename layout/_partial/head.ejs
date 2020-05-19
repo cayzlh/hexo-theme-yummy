@@ -139,7 +139,17 @@
         <script type="text/javascript" src="<%- url_for("/js/lock.js") %>"></script>
     <% } %>
 
+    <% if(theme.comment.enable) { %>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+        <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+        <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+    <% } %>
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
 </head>

@@ -20,6 +20,13 @@
 
 - 文章页添加分类和标签展示
 - 添加`busuanzi`统计，对应站点访问统计和文章访问量统计
+- 添加评论系统支持
+  - [x] gitalk
+  - [x] gitment
+  - [ ] disqus，需要翻墙，不整了
+  - [ ] livere，这个试了下，太慢了
+  - [x] valine
+  - [ ] minivaline
 
 # 使用说明
 

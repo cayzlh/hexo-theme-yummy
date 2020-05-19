@@ -1,0 +1,60 @@
+<div class="comment">
+    <br><br><br>
+    <% if (page.comments) { %>
+        <% if (theme.comment.gitalk.enable) { %>
+            <div id="gitalk-container"></div>
+            <script>
+                var gitalk = new Gitalk({
+                    clientID: '<%- theme.comment.gitalk.oauth.clientId %>',
+                    clientSecret: '<%- theme.comment.gitalk.oauth.clientSecret %>',
+                    repo: '<%- theme.comment.gitalk.repo %>',
+                    owner: '<%- theme.comment.gitalk.owner %>',
+                    admin: <%- JSON.stringify(theme.comment.gitalk.admin) %>,
+                    id: '<%- page.title %>',
+                    distractionFreeMode: false  // Facebook-like distraction free mode
+                })
+                gitalk.render('gitalk-container')
+            </script>
+        <% } %>
+
+        <% if (theme.comment.gitment.enable) { %>
+            <div id="gitment-container"></div>
+            <script>
+                var gitment = new Gitment({
+                    id: '<%- page.title %>', // 可选。默认为 location.href
+                    owner: '<%- theme.comment.gitment.owner %>',
+                    repo: '<%- theme.comment.gitment.repo %>',
+                    oauth: {
+                        client_id: '<%- theme.comment.gitment.client_id %>',
+                        client_secret: '<%- theme.comment.gitment.client_secret %>',
+                    },
+                })
+                gitment.render('gitment-container')
+            </script>
+        <% } %>
+
+        <% if (theme.comment.valine.enable) { %>
+            <div id="valine-container"></div>
+            <script>
+                var GUEST_INFO = ['nick','mail','link'];
+                var guest_info = '<%= theme.comment.valine.guest_info %>'.split(',').filter(function(item){
+                    return GUEST_INFO.indexOf(item) > -1;
+                });
+                new Valine({
+                    el: '#valine-container',
+                    appId: '<%- theme.comment.valine.appId %>',
+                    appKey: '<%- theme.comment.valine.appKey %>',
+                    notify: '<%- theme.comment.valine.notify %>' === 'true',
+                    verify: '<%- theme.comment.valine.verify %>' === 'true',
+                    visitor: '<%- theme.comment.valine.visitor %>' === 'true',
+                    avatar: '<%- theme.comment.valine.avatar %>',
+                    pageSize: '<%- theme.comment.valine.pageSize %>',
+                    lang: '<% if (config.language == "zh-CN") {  %>zh-cn<% } else { %>en<% } %>',
+                    placeholder: '<%= theme.comment.valine.placeholder %>',
+                    guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info
+                });
+            </script>
+        <% } %>
+
+    <% } %>
+</div>

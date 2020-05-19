@@ -8,6 +8,9 @@
             <% if (theme.postending.enable) { %>
                 <%- partial('_partial/post-ending') %>
             <% } %>
+            <% if(theme.comment.enable) { %>
+                <%- partial('_partial/post-comment') %>
+            <% } %>
         </div>
         <%
         var topic = toc(page.content);
