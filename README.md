@@ -24,6 +24,15 @@
 
 ## 安装
 
+### 安装依赖
+
+```bash
+npm install hexo-related-popular-posts --save
+npm install  hexo-prism-plugin --save
+```
+
+### 安装主题
+
 1. 进入Hexo**站点文件夹**，克隆本主题到`themes/`路径下：
 
    直接使用master分支，可能不稳定。 。
@@ -77,7 +86,13 @@
      custom_css: '/css/common.css'# 这里要配这个，否则不好看。。
    ```
 
-4. 启用主题
+4. 使用`hexo-related-popular-posts`插件，开启相关文章推荐功能
+
+   ```bash
+   npm install hexo-related-popular-posts --save
+   ```
+
+5. 启用主题
 
    修改站点配置文件`_config.yml`，启用Yummy主题
 
