@@ -50,11 +50,7 @@
    npm install  hexo-prism-plugin --save
    ```
 
-   若出现以下提示
-
-   ![image-20200519101847243](https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/2020/05/19/image-20200519101847243_cljW7V.png)
-
-   则执行
+   *根据提示，你可能还需执行*
 
    ```bash
    npm audit fix
@@ -77,6 +73,16 @@
      line_number: true    # default false 是否展示行号
      custom_css: '/css/common.css'# 这里要配这个，否则不好看。。
    ```
+
+4. 启用主题
+
+   修改站点配置文件`_config.yml`，启用Yummy主题
+
+   ```yml
+   theme: Yummy
+   ```
+
+   
 
 ## 主题配置文件
 
