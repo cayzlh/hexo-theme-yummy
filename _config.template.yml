@@ -1,6 +1,6 @@
 # 页面右上方的几个链接，key随便写。
 topbar:
-  homepage:
+  homepage: # 这个字段随便写
     name: 导航页
     url: https://cayzlh.github.io
   github:
