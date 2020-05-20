@@ -11,7 +11,7 @@
                     <% }); %>
                 <%}%>
                 <% if(page.tags) { %>
-                    <a><span class="octicon octicon-bookmark"></span></a>
+                    <a><span class="octicon octicon-tag"></span></a>
                     <% page.tags.forEach(function (tag) { %>
                         <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
                     <% }); %>

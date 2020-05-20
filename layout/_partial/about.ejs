@@ -4,9 +4,19 @@
             <h1><%= page.title %></h1>
             <% if (page.subtitle) { %>
                 <span class="meta-info">
-                    <span class="mega-octicon octicon-person"></span>
-                    <%= page.subtitle %>
-            </span>
+                    <span class="mega-octicon octicon-person-add"></span>
+                    <span><%= page.subtitle %></span>
+                </span>
+            <% } %>
+            <% if (theme.busuanzi.enable && page.busuanzi) { %>
+                <span id="busuanzi_container_site_pv" class="meta-info">
+                    <span class="mega-octicon octicon-eye"></span>
+                    <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>
+                </span>
+                <span id="busuanzi_container_site_uv" class="meta-info">
+                    <span class="mega-octicon octicon-organization"></span>
+                    <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>
+                </span>
             <% } %>
         </div>
     </div>
