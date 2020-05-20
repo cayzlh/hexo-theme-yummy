@@ -40,9 +40,10 @@
                         child.path = $parent.find("a").attr("href");
                         child.title = $parent.find("a").find("span").html();
 
-                        if ($parent.find("ol")) {
+                        var $children = $($parent.children("ol").children());
+                        if ($children) {
                             var children = [];
-                            $parent.find("ol").children().each(function () {
+                            $children.each(function () {
                                 children.push(getChild($(this)));
                             });
                             child.children = children;
@@ -51,7 +52,7 @@
                     }
                     $(document).ready(function () {
                         var toc = [];
-                        $("#toc ol").children().each(function () {
+                        $("#toc").children().children().each(function () {
                             toc.push(getChild($(this)));
                         });
                         if (toc.length > 0) {
