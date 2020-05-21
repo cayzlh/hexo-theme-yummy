@@ -10,12 +10,6 @@
                         <a href="<%- url_for(cate.path) %>"><%= cate.name %></a>
                     <% }); %>
                 <%}%>
-                <% if(page.tags) { %>
-                    <a><span class="octicon octicon-tag"></span></a>
-                    <% page.tags.forEach(function (tag) { %>
-                        <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
-                    <% }); %>
-                <%}%>
                 <% if (theme.busuanzi.enable) { %>
                     <% if (theme.busuanzi.post.pv) { %>
                         <a>

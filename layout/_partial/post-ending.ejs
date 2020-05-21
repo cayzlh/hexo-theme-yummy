@@ -1,3 +1,12 @@
+<% if(page.tags) { %>
+<div style="text-align:center;width:100%">
+    <span class="octicon octicon-tag-add"></span>
+    <% page.tags.forEach(function (tag) { %>
+        <a style="color: #24292e;" href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+    <% }); %>
+</div>
+<% } %>
+
 <% if (theme.postending.image) { %>
     <div style="text-align:center;width:100%">
         <img src="https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/uPic/640-2.gif">
@@ -34,7 +43,7 @@
     <blockquote>
         <ul class="post-copyright">
             <li class="post-copyright-author">
-                <strong>文章来源： </strong>
+                <strong>本文来源： </strong>
                 <%
                 var url = page.author && page.author.link ? page.author.link : page.permalink;
                 var nick = page.author && page.author.nick ? page.author.nick : config.author;
@@ -44,7 +53,7 @@
                    rel="noopener external nofollow noreferrer"
                    target="_blank"><%= nick %></a></li>
             <li class="post-copyright-link">
-                <strong>文章链接：</strong>
+                <strong>本文链接：</strong>
                 <a href="<%- url_for(page.permalink) %>"
                    title="<%- url_for(page.title) %>"><%= page.permalink %></a>
             </li>
