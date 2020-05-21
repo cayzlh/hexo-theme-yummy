@@ -325,7 +325,9 @@ copyright:
 postending:
   enable: true # 是否启用
   image: true # 是否在文章结尾显示一个图片
-  declaration: true # 是否在文章结尾显示版权声明
+  declaration: # 是否在文章结尾显示版权声明
+    enable: true
+    copyright: # 版权声明。不配则用默认的文案。支持html代码片段
 ```
 
 ### busuanzi统计
