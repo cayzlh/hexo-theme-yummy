@@ -6,7 +6,7 @@
 - [预览｜Preview](https://cayzlh.github.io/blog)
 - 没有花里胡哨的特效，简洁清爽。
 
-# Features
+# Features 
 
 - [x] hexo主题基础功能
 - [x] 评论系统
