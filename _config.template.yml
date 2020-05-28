@@ -193,7 +193,7 @@ popular_posts:
   title: 相关推荐
   max: 6
 
-# 公众号引流，需要插件 https://github.com/snowdreams1006/hexo-plugin-readmore
+# 公众号引流，使用插件 https://github.com/snowdreams1006/hexo-plugin-readmore
 # 需要去 https://my.openwrite.cn 注册一个账号并开通增长工具：博客导流公众号
 readmore:
   blogId: # 填写已申请的博客 id
