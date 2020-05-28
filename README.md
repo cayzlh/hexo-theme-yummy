@@ -403,13 +403,22 @@ popular_posts:
 # 公众号引流，需要插件 https://github.com/snowdreams1006/hexo-plugin-readmore
 # 需要去 https://my.openwrite.cn 注册一个账号并开通增长工具：博客导流公众号
 readmore:
+  enable: false
   blogId: # 填写已申请的博客 id
   name:  # 填写已申请的博客名称
   qrcode: # 填写已申请的公众号二维码链接
   keyword: # 填写已申请的公众号回复关键字
 ```
 
-开启这个功能，除了在主题配置文件中配置以外，还需要配置文章属性的影响，需要在文章中添加属性：`readmore: true`
+开启这个功能，除了在主题配置文件中配置以外，还需要配置文章属性的影响，需要在文章中添加属性：`readmore: true`，如：
+
+```yaml
+---
+title: "About"
+comments: true
+readmore: true
+---
+```
 
 ### 其他
 
