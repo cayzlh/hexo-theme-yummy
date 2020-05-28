@@ -13,6 +13,7 @@
 - [x] 阅读统计
 - [ ] ~文章搜索功能~
 - [x] 相关文章推荐
+- [x] 博客引流到公众号（观众公众号获得阅读更多的权限）
 
 # TimeLine
 
@@ -394,6 +395,18 @@ popular_posts:
   enable: false
   title: 相关推荐
   max: 6
+```
+
+### 博客引流到公众号
+
+```yml
+# 公众号引流，需要插件 https://github.com/snowdreams1006/hexo-plugin-readmore
+# 需要去 https://my.openwrite.cn 注册一个账号并开通增长工具：博客导流公众号
+readmore:
+  blogId: # 填写已申请的博客 id
+  name:  # 填写已申请的博客名称
+  qrcode: # 填写已申请的公众号二维码链接
+  keyword: # 填写已申请的公众号回复关键字
 ```
 
 ### 其他
