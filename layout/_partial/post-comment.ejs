@@ -1,5 +1,6 @@
 <div class="comment">
     <br><br><br>
+    <h4>留言区</h4>
     <% if (page.comments) { %>
         <% if (theme.comment.gitalk.enable) { %>
             <div id="gitalk-container"></div>
@@ -36,8 +37,8 @@
         <% if (theme.comment.valine.enable) { %>
             <div id="valine-container"></div>
             <script>
-                var GUEST_INFO = ['nick','mail','link'];
-                var guest_info = '<%= theme.comment.valine.guest_info %>'.split(',').filter(function(item){
+                var GUEST_INFO = ['nick', 'mail', 'link'];
+                var guest_info = '<%= theme.comment.valine.guest_info %>'.split(',').filter(function (item) {
                     return GUEST_INFO.indexOf(item) > -1;
                 });
                 new Valine({
@@ -49,7 +50,7 @@
                     visitor: '<%- theme.comment.valine.visitor %>' === 'true',
                     avatar: '<%- theme.comment.valine.avatar %>',
                     pageSize: '<%- theme.comment.valine.pageSize %>',
-                    lang: '<% if (config.language == "zh-CN") {  %>zh-cn<% } else { %>en<% } %>',
+                    lang: '<% if (config.language == "zh-CN") { %>zh-cn<% } else { %>en<% } %>',
                     placeholder: '<%= theme.comment.valine.placeholder %>',
                     guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info
                 });
