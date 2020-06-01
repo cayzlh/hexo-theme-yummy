@@ -7,9 +7,9 @@
             if (theme.category.enable) {
                 var key = page.category;
                 var c = theme.category[key];
-                if ( c ) {
-                    title = c.title;
-                    subtitle = c.subtitle;
+                if (c) {
+                    title = c.title ? c.title : title;
+                    subtitle = c.subtitle ? c.subtitle : subtitle;
                 }
             }
             %>

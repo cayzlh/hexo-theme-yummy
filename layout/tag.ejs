@@ -8,8 +8,8 @@
                 var key = page.tag;
                 var c = theme.tag[key];
                 if ( c ) {
-                    title = c.title;
-                    subtitle = c.subtitle;
+                    title = c.title ? c.title : title;
+                    subtitle = c.subtitle ? c.subtitle : subtitle;
                 }
             }
             %>

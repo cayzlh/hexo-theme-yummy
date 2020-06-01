@@ -1,8 +1,8 @@
 <div class="comment">
     <br><br><br>
-    <h4>留言区</h4>
     <% if (page.comments) { %>
         <% if (theme.comment.gitalk.enable) { %>
+            <h4>留言区</h4>
             <div id="gitalk-container"></div>
             <script>
                 var gitalk = new Gitalk({
@@ -19,6 +19,7 @@
         <% } %>
 
         <% if (theme.comment.gitment.enable) { %>
+            <h4>留言区</h4>
             <div id="gitment-container"></div>
             <script>
                 var gitment = new Gitment({
@@ -35,6 +36,7 @@
         <% } %>
 
         <% if (theme.comment.valine.enable) { %>
+            <h4>留言区</h4>
             <div id="valine-container"></div>
             <script>
                 var GUEST_INFO = ['nick', 'mail', 'link'];
