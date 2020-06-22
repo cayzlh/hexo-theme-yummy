@@ -3,7 +3,7 @@
 > 一次偶然的机会，发现了[Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll) 这个jekyll主题，这种清爽简约的风格深得我心，于是着手移植到Hexo来。由于不会写前端，所有样式照搬。
 
 - 基于[Hexo 4.2.0](https://hexo.io)
-- [预览｜Preview](https://cayzlh.github.io/blog)
+- [预览｜Preview](https://www.cayzlh.com/blog)
 - 没有花里胡哨的特效，简洁清爽。
 
 # Features 
@@ -113,7 +113,7 @@ npm install  hexo-prism-plugin --save
 topbar:
   homepage:	# 这个字段随便写
     name: 导航页
-    url: https://cayzlh.github.io
+    url: https://www.cayzlh.com
   github:
     name: GitHub
     url: https://github.com/cayzlh
@@ -138,9 +138,9 @@ menu:
     name: 在线工具
     children:
       - name: Json在线工具
-        url: https://cayzlh.github.io/tools/online-JSONFormat/
+        url: https://www.cayzlh.com/tools/online-JSONFormat/
       - name: Markdown在线转换工具
-        url: https://cayzlh.github.io/tools/online-markdown/
+        url: https://www.cayzlh.com/tools/online-markdown/
 ```
 
 
@@ -186,7 +186,7 @@ social:
     target: _blank
     icon: fa-github
     txt:
-  - url: https://twitter.com/Q2F5emxo
+  - url: https://twitter.com/🐳Ant丶
     target: _blank
     icon: fa-twitter
     txt:
@@ -315,7 +315,7 @@ tag:
 # 页面下方copyright设置
 copyright:
   enable: true
-  name: Q2F5emxo
+  name: 🐳Ant丶
   since: 2020
 ```
 
@@ -428,7 +428,7 @@ readmore: true
 
 [MIT License](https://github.com/cayzlh/cayzlh.github.io/blob/master/LICENSE)
 
-Copyright (c) 2020 Q2F5emxo
+Copyright (c) 2020 🐳Ant丶
 
 
 
