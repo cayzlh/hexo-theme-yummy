@@ -3,12 +3,6 @@
         <%- partial('_partial/social-sidebar') %>
 
         <div class="site-footer-links mobile-hidden">
-            <% if(theme.copyright.enable) { %>
-                <span class="meta-info-index hvr-grow"><%- theme.copyright.name %> &copy; <%- theme.copyright.since %></span>
-            <% } %>
-        </div>
-
-        <div class="site-footer-links mobile-hidden">
             <% if (theme.busuanzi.enable) { %>
                 <% if (theme.busuanzi.site.pv) { %>
                     <span id="busuanzi_container_site_pv" style='display:none'>
@@ -23,11 +17,22 @@
             <% } %>
         </div>
 
-        <% if(theme.ICP) { %>
-            <div class="site-footer-icons">
-                <a href="http://beian.miit.gov.cn"><%= theme.ICP %></a>
-            </div>
+        <div class="site-footer-links mobile-hidden">
+        <% if(theme.copyright.enable) { %>
+            <span class="meta-info-index hvr-grow">
+                <% if(theme.copyright.link) { %>
+                    <a href="<%- theme.copyright.link %>">
+                        <%- theme.copyright.name %> &copy; <%- theme.copyright.since %>
+                    </a>
+                <% } %>
+            </span>
         <% } %>
+        <% if(theme.ICP) { %>
+            <span class="meta-info-index hvr-grow">
+                <a href="http://beian.miit.gov.cn"><%= theme.ICP %></a>
+            </span>
+        <% } %>
+        </div>
 
         <% if(theme.top.enable) { %>
             <div class="scrolltop">
