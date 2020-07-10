@@ -28,9 +28,14 @@
         });
         %>
         <% categories.forEach(function (cate) { %>
-            <li>
-                <a href="<%- url_for(cate.path) %>" target="_blank"><%= cate.name %> ( <%= cate.length %> )</a>
-            </li>
+            <h3>
+                <a style="color: black;" href="<%- url_for(cate.path) %>" target="_blank"><%= cate.name %></a>
+            </h3>
+            <% cate.posts.forEach(function (p) { %>
+                <li>
+                    <a href="<%- url_for(p.path) %>" target="_blank"><%= p.title %></a>
+                </li>
+            <% }); %>
         <% }); %>
     </ul>
 </article>

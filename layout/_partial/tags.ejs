@@ -28,9 +28,14 @@
         });
         %>
         <% tags.forEach(function (tag) { %>
-            <li>
-                <a href="<%- url_for(tag.path) %>" target="_blank"><%= tag.name %> ( <%= tag.length %> )</a>
-            </li>
+            <h3>
+                <a style="color: black;" href="<%- url_for(tag.path) %>" target="_blank"><%= tag.name %></a>
+            </h3>
+            <% tag.posts.forEach(function (p) { %>
+                <li>
+                    <a href="<%- url_for(p.path) %>" target="_blank"><%= p.title %></a>
+                </li>
+            <% }); %>
         <% }); %>
     </ul>
 </article>
