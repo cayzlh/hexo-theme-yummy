@@ -7,7 +7,7 @@
             if (theme.tag.enable) {
                 var key = page.tag;
                 var c = theme.tag[key];
-                if ( c ) {
+                if (c) {
                     title = c.title ? c.title : title;
                     subtitle = c.subtitle ? c.subtitle : subtitle;
                 }
@@ -35,18 +35,8 @@
     <div class="row">
 
         <div class="col-md-12">
-
             <ul id="posts-list">
-                <%
-                var posts = [];
-
-                page.posts.each(function (post) {
-                    posts.push(post);
-                });
-
-                var sortPosts = _[_.orderBy ? 'orderBy' : 'sortByOrder'](posts, ['date'], ['desc']);
-                %>
-                <% sortPosts.forEach(function (post) { %>
+                <% page.posts.sort('date', 'desc').forEach(function (post) { %>
                     <li class="posts-list-item">
                         <div class="posts-content">
                             <span class="posts-list-meta"><%= post.date.format('YYYY-MM-DD') %></span>
