@@ -2,7 +2,7 @@
 
 > 一次偶然的机会，发现了[Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll) 这个jekyll主题，这种清爽简约的风格深得我心，于是着手移植到Hexo来。由于不会写前端，所有样式照搬。
 
-- 基于[Hexo 4.2.1](https://hexo.io)
+- 基于[Hexo 4.2.1+](https://hexo.io)
 - [预览｜Preview](https://www.cayzlh.com/blog)
 - 没有花里胡哨的特效，简洁清爽。
 

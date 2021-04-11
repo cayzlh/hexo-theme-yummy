@@ -1,8 +1,8 @@
 # 页面右上方的几个链接，key随便写。
 topbar:
   homepage: # 这个字段随便写
-    name: 导航页
-    url: https://cayzlh.github.io
+    name: cayzlh
+    url: https://cayzlh.com
   github:
     name: GitHub
     url: https://github.com/cayzlh
@@ -30,7 +30,7 @@ menu:
 
 # slogan 和 下面的一排链接配置，不配不显示
 jumbotron:
-  slogan: 记录成长路上的风景
+  slogan: THIS IS A SLOGAN
   infos:
     - name: 富强
       url: /
@@ -67,7 +67,7 @@ social:
     target: _blank
     icon: fa-twitter
     txt:
-  - url: mailto:chenanyu@cayzlh.com
+  - url: mailto:xxxxxx@mail.com
     target: _blank
     icon:
     txt: 邮
@@ -83,7 +83,7 @@ favorites:
 
 # 展示开源项目（GitHub）
 openSource:
-  enable: false # 是否展示
+  enable: true # 是否展示
   title: 开源软件
   username: cayzlh # github用户名，用于展示stars 和 forks数
   repos:
