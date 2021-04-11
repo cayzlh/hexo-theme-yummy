@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="API签名验证方案">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>API签名验证方案 | Yummy Demo</title>
+
+    
+    <!-- Third-Party CSS -->
+    
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <link rel="stylesheet" href="/css/thirdparty/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/thirdparty/octicons.css">
+        <link rel="stylesheet" href="/css/thirdparty/hover-min.css">
+        <link rel="stylesheet" href="/css/thirdparty/user-content.min.css">
+        <link rel="stylesheet" href="/css/thirdparty/syntax.css">
+        <link rel="stylesheet" href="/css/thirdparty/gitalk.css">
+
+        <!-- My CSS -->
+        <link rel="stylesheet" href="/css/common.css">
+
+        <link rel="stylesheet" href="/css/sidebar-post-nav.css">
+
+        <link rel="stylesheet" href="/css/blog-page.css">
+        <!-- CSS set in page -->
+
+        
+        <link rel="stylesheet" href="/css/sidebar-popular-repo.css">
+    
+
+    <!-- CSS set in layout -->
+    <link rel="stylesheet" type="text/css"
+          href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    
+        <script type="text/javascript" src="/js/thirdparty/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/thirdparty/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/lock.js"></script>
+    
+
+    
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+<header class="site-header">
+    <div class="site-header-topbar">
+        <div class="container">
+            <div class="topbar-menu">
+
+    
+        <div class="item">
+            <a target="_blank" rel="noopener" href="https://cayzlh.com"
+               
+               title="cayzlh">
+                cayzlh
+            </a>
+        </div>
+    
+        <div class="item">
+            <a href="https://github.com/cayzlh"
+               target="" 
+               title="GitHub">
+                GitHub
+            </a>
+        </div>
+    
+        <div class="item">
+            <a href="/about"
+               
+               title="关于">
+                关于
+            </a>
+        </div>
+    
+
+</div>
+        </div>
+    </div>
+    <div class="container">
+        <a id="site-header-brand" href="/" title="Yummy Demo">
+            <span class="octicon octicon-mark-github"></span>
+            Yummy Demo
+        </a>
+
+        <nav class="site-header-nav" role="navigation">
+    
+        <div class=" site-header-nav-item hvr-underline-from-center">
+            <a href="/"
+               
+               title="首页">
+                首页
+            </a>
+            
+        </div>
+    
+        <div class=" site-header-nav-item hvr-underline-from-center">
+            <a href="/archives"
+               
+               title="归档">
+                归档
+            </a>
+            
+        </div>
+    
+        <div class=" site-header-nav-item hvr-underline-from-center">
+            <a href="/"
+               
+               title="在线工具">
+                在线工具
+            </a>
+            
+                <ul class="submenu">
+                    
+
+                        <li>
+                            <a target="_blank" rel="noopener" href="https://cayzlh.github.io/tools/online-JSONFormat/"
+                            
+                            >
+                                <span>Json在线工具</span>
+                            </a>
+                        </li>
+
+                    
+
+                        <li>
+                            <a target="_blank" rel="noopener" href="https://cayzlh.github.io/tools/online-markdown/"
+                            
+                            >
+                                <span>Markdown在线转换工具</span>
+                            </a>
+                        </li>
+
+                    
+                </ul>
+            
+        </div>
+    
+</nav>
+    </div>
+</header>
+<main class="content">
+    <!-- 标题部分 -->
+<section class="jumbotron geopattern" data-pattern-id="API签名验证方案">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <h1>API签名验证方案</h1>
+            <span class="meta-info">
+                <a><span class="octicon octicon-calendar"></span> 2020-09-29</a>
+                
+                    <a><span class="octicon octicon-book"></span></a>
+                    
+                        <a href="/categories/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a>
+                    
+                
+                
+                    
+                        <a>
+                            <span class="octicon octicon-eye-watch"
+                                  id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+                        </a>
+                    
+                
+            </span>
+        </div>
+
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+<!-- 文章内容部分 -->
+<article class="post container " itemscope itemtype="http://schema.org/BlogPosting" id="openwrite-container">
+    <div class="row">
+        <div class="col-md-9 markdown-body">
+            <!-- 文章开始部分 -->
+            <!--<div style="text-align:center">-->
+<!--    <img style="display:inline-block" width="130" height="27"-->
+<!--         src="https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/uPic/640-3.gif"-->
+<!--         data-loaded="true">-->
+<!--    <img style="display:inline-block" width="41" height="35"-->
+<!--         src="https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/uPic/640-4.gif"-->
+<!--         data-loaded="true">-->
+<!--    <img style="display:inline-block"-->
+<!--         width="130" height="27"-->
+<!--         src="https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/uPic/640-5.gif"-->
+<!--         data-loaded="true">-->
+<!--</div>-->
+            <h2 id="接口安全问题"><a href="#接口安全问题" class="headerlink" title="接口安全问题"></a>接口安全问题</h2><ul>
+<li>请求身份是否合法？</li>
+<li>请求参数是否被篡改？</li>
+<li>请求是否唯一？</li>
+</ul>
+<h2 id="AccessKey-amp-SecretKey-（开放平台）"><a href="#AccessKey-amp-SecretKey-（开放平台）" class="headerlink" title="AccessKey&amp;SecretKey （开放平台）"></a>AccessKey&amp;SecretKey （开放平台）</h2><h3 id="请求身份"><a href="#请求身份" class="headerlink" title="请求身份"></a>请求身份</h3><p>为开发者分配**<code>AccessKey</code><strong>（开发者标识，确保唯一）和</strong><code>SecretKey</code>**（用于接口加密，确保不易被穷举，生成算法不易被猜测）。</p>
+<h3 id="防止篡改"><a href="#防止篡改" class="headerlink" title="防止篡改"></a>防止篡改</h3><p><strong>参数签名</strong></p>
+<ol>
+<li>按照请求参数名的字母升序排列非空请求参数（包含<code>AccessKey</code>），使用<code>URL</code>键值对的格式（即<code>key1=value1&amp;key2=value2…</code>）拼接成字符串stringA；</li>
+<li>在<code>stringA</code>最后拼接上<code>Secretkey</code>得到字符串<code>stringSignTemp</code>；</li>
+<li>对<code>stringSignTemp</code>进行<code>MD5</code>运算，并将得到的字符串所有字符转换为大写，得到<code>sign</code>值。</li>
+</ol>
+<p>请求携带参数**<code>AccessKey</code><strong>和</strong><code>Sign</code><strong>，只有拥有合法的身份<code>AccessKey</code>和正确的签名<code>Sign</code>才能放行。这样就解决了身份验证和参数篡改问题，即使请求参数被劫持，由于获取不到<code>SecretKey</code>（</strong>仅作本地加密使用，不参与网络传输**），无法伪造合法的请求。</p>
+<h3 id="重放攻击"><a href="#重放攻击" class="headerlink" title="重放攻击"></a>重放攻击</h3><p>虽然解决了请求参数被篡改的隐患，但是还存在着重复使用请求参数伪造二次请求的隐患。</p>
+<p><strong>timestamp+nonce方案</strong></p>
+<p><code>nonce</code>指<strong>唯一的随机字符串</strong>，用来标识每个被签名的请求。通过为每个请求提供一个唯一的标识符，服务器能够防止请求被多次使用（记录所有用过的<code>nonce</code>以阻止它们被二次使用）。</p>
+<p>然而，对服务器来说永久存储所有接收到的<code>nonce</code>的代价是非常大的。可以使用**<code>timestamp</code>来优化<code>nonce</code>的存储**。</p>
+<p>假设允许客户端和服务端最多能存在15分钟的时间差，同时追踪记录在服务端的<code>nonce</code>集合。当有新的请求进入时，首先检查携带的<code>timestamp</code>是否在15分钟内，如超出时间范围，则拒绝，然后查询携带的<code>nonce</code>，如存在已有集合，则拒绝。否则，记录该<code>nonce</code>，并删除集合内时间戳大于15分钟的<code>nonce</code>（可以使用<code>redis</code>的<code>expire</code>，新增<code>nonce</code>的同时设置它的超时失效时间为15分钟）。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><pre class="line-numbers language-shell"><code class="language-shell">请求接口：http://api.test.com/test?name=hello&home=world&work=java
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><p><u><strong>客户端</strong></u></p>
+</li>
+<li><ol>
+<li><p>生成当前时间戳<code>timestamp=now</code>和唯一随机字符串<code>nonce=random</code></p>
+</li>
+<li><p>按照请求参数名的字母升序排列非空请求参数（包含<code>AccessKey</code>)：</p>
+<p><code>stringA=&quot;AccessKey=access&amp;home=world&amp;name=hello&amp;work=java&amp;timestamp=now&amp;nonce=random&quot;;</code></p>
+</li>
+<li><p>拼接密钥<code>SecretKey</code>：</p>
+<p><code>stringSignTemp=&quot;AccessKey=access&amp;home=world&amp;name=hello&amp;work=java&amp;timestamp=now&amp;nonce=random&amp;SecretKey=secret&quot;;</code></p>
+</li>
+<li><p><code>MD5</code>并转换为大写：</p>
+<p><code>sign=MD5(stringSignTemp).toUpperCase();</code></p>
+</li>
+<li><p>最终请求：</p>
+<p><code>http://api.test.com/test?name=hello&amp;home=world&amp;work=java&amp;timestamp=now&amp;nonce=nonce&amp;sign=sign;</code></p>
+</li>
+</ol>
+</li>
+<li><p><strong><u>服务端</u></strong></p>
+<p><img src="https://gitee.com/cayzlh/img-repo/raw/master/2020/09/17024116013701611601370161045.png" alt="image-20200929170240504"></p>
+</li>
+</ul>
+<h2 id="Token-amp-AppKey（APP）"><a href="#Token-amp-AppKey（APP）" class="headerlink" title="Token&amp;AppKey（APP）"></a>Token&amp;AppKey（APP）</h2><p>在<code>APP</code>开放<code>API</code>接口的设计中，由于大多数接口涉及到用户的个人信息以及产品的敏感数据，所以要对这些接口进行身份验证，为了安全起见让用户暴露的明文密码次数越少越好，然而客户端与服务器的交互在请求之间是无状态的，也就是说，当涉及到用户状态时，每次请求都要带上身份验证信息。</p>
+<h3 id="Token身份验证"><a href="#Token身份验证" class="headerlink" title="Token身份验证"></a>Token身份验证</h3><ol>
+<li>用户登录向服务器提供认证信息（如账号和密码），服务器验证成功后**返回<code>Token</code>**给客户端；</li>
+<li>客户端将<code>Token</code>保存在本地，后续发起请求时，<strong>携带此Token</strong>；</li>
+<li>服务器检查<code>Token</code>的有效性，有效则放行，无效（<code>Token</code>错误或过期）则拒绝。</li>
+</ol>
+<p><strong>安全隐患</strong>：<code>Token</code>被劫持，伪造请求和篡改参数。</p>
+<h3 id="Token-AppKey签名验证"><a href="#Token-AppKey签名验证" class="headerlink" title="Token+AppKey签名验证"></a>Token+AppKey签名验证</h3><p>与上面开发平台的验证方式类似，为客户端分配**<code>AppKey</code><strong>（密钥，用于接口加密，不参与传输），将<code>AppKey</code>和所有请求参数组合成源串，根据</strong>签名算法<strong>生成签名值，发送请求时将签名值一起发送给服务器验证。这样，即使<code>Token</code>被劫持，对方不知道<code>AppKey</code>和签名算法，就无法伪造请求和篡改参数。再结合上述的</strong>重发攻击**解决方案，即使请求参数被劫持也无法伪造二次重复请求。</p>
+<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><p><strong><u>登录和退出请求</u></strong></p>
+<p><img src="https://gitee.com/cayzlh/img-repo/raw/master/2020/09/17105416013706541601370654137.png" alt="image-20200929171053770"></p>
+<p><strong><u>后续请求</u></strong></p>
+<ul>
+<li><p>客户端 和上述开放平台的客户端行为类似，把<code>AccessKey</code>改为<code>token</code>即可。</p>
+</li>
+<li><p>服务端</p>
+<p><img src="https://gitee.com/cayzlh/img-repo/raw/master/2020/09/17140816013708481601370848386.png" alt="image-20200929171408101"></p>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>  <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/QUaLa8oU4B1rCb-8FCs79g">芋道源码</a></li>
+</ul>
+
+            <!-- 文章结尾部分 -->
+            
+                
+<div style="text-align:center;width:100%">
+    <span class="octicon octicon-tag-add"></span>
+    
+        <a style="color: #24292e;" href="/tags/Java/">Java</a>
+    
+        <a style="color: #24292e;" href="/tags/%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8/">接口安全</a>
+    
+</div>
+
+
+
+    <div style="text-align:center;width:100%">
+        <img src="https://cdn.jsdelivr.net/gh/cayzlh/git-img-repository@master/uPic/640-2.gif">
+    </div>
+
+
+
+
+
+
+<div>
+    <h4>版权声明</h4>
+    <blockquote>
+        <ul class="post-copyright">
+            <li class="post-copyright-author">
+                <strong>本文来源： </strong>
+                
+                <a href="http://example.com/2020/09/29/API%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88/"
+                   title="John Doe"
+                   rel="noopener external nofollow noreferrer"
+                   target="_blank">John Doe</a></li>
+            <li class="post-copyright-link">
+                <strong>本文链接：</strong>
+                <a href="http://example.com/2020/09/29/API%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88/"
+                   title="/API%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88">http://example.com/2020/09/29/API%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88/</a>
+            </li>
+            <li class="post-copyright-license">
+                <strong>版权声明： </strong>
+                
+                    文章内容仅用作学习和分享，转载请注明出处
+                
+            </li>
+        </ul>
+    </blockquote>
+</div>
+
+
+            
+            
+        </div>
+        
+            <div class="col-md-3">
+                <h4>文章目录</h4>
+                <div id="toc" style="display: none;">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-text">接口安全问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AccessKey-amp-SecretKey-%EF%BC%88%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0%EF%BC%89"><span class="toc-text">AccessKey&amp;SecretKey （开放平台）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E8%BA%AB%E4%BB%BD"><span class="toc-text">请求身份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E6%AD%A2%E7%AF%A1%E6%94%B9"><span class="toc-text">防止篡改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E6%94%BE%E6%94%BB%E5%87%BB"><span class="toc-text">重放攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Token-amp-AppKey%EF%BC%88APP%EF%BC%89"><span class="toc-text">Token&amp;AppKey（APP）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Token%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81"><span class="toc-text">Token身份验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Token-AppKey%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81"><span class="toc-text">Token+AppKey签名验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0-1"><span class="toc-text">实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
+                </div>
+                <div id="post-directory-module">
+                    <section class="post-directory">
+                        <!-- Links that trigger the jumping -->
+                        <!-- Added by javascript below -->
+                        <dl></dl>
+                    </section>
+                </div>
+
+                <script type="text/javascript">
+                    var getChild = function ($parent) {
+                        var child = {};
+                        child.path = $parent.find("a").attr("href");
+                        child.title = $parent.find("a").find("span").html();
+
+                        var $children = $($parent.children("ol").children());
+                        if ($children) {
+                            var children = [];
+                            $children.each(function () {
+                                children.push(getChild($(this)));
+                            });
+                            child.children = children;
+                        }
+                        return child;
+                    }
+                    $(document).ready(function () {
+                        var toc = [];
+                        $("#toc").children().children().each(function () {
+                            toc.push(getChild($(this)));
+                        });
+                        if (toc.length > 0) {
+                            $("#toc").remove();
+                            toc.forEach(function (t) {
+                                $(".post-directory dl").append("<dt><a class=\"jumper\" href="
+                                    + t.path
+                                    + ">"
+                                    + t.title
+                                    + "</a></dt>");
+                                var tc = t.children;
+                                if (tc.length > 0) {
+                                    tc.forEach(function (c) {
+                                        $(".post-directory dl").append(
+                                            "<dd><a class=\"jumper\" href="
+                                            + c.path
+                                            + ">"
+                                            + "&nbsp;&nbsp;- " + c.title
+                                            + "</a></dd>"
+                                        );
+                                    });
+                                }
+                            });
+
+                        }
+                        var fixmeTop = $('#post-directory-module').offset().top - 100;       // get initial position of the element
+
+                        $(window).scroll(function () {                  // assign scroll event listener
+
+                            var currentScroll = $(window).scrollTop(); // get current position
+
+                            if (currentScroll >= fixmeTop) {           // apply position: fixed if you
+                                $('#post-directory-module').css({      // scroll to that element or below it
+                                    top: '100px',
+                                    position: 'fixed',
+                                    width: 'inherit'
+                                });
+                            } else {                                   // apply position: static
+                                $('#post-directory-module').css({      // if you scroll above it
+                                    position: 'inherit',
+                                    width: 'inherit'
+                                });
+                            }
+
+                        });
+
+                        $("a.jumper").on("click", function (e) {
+
+                            e.preventDefault();
+
+                            $("body, html").animate({
+                                scrollTop: ($($(this).attr('href')).offset().top - 100)
+                            }, 600);
+
+                        });
+                    });
+
+                </script>
+            </div>
+        
+    </div>
+    
+</article>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</main>
+<footer class="container">
+    <div class="site-footer">
+        
+    <div class="card text-center">
+        <ul class="list-inline" style="margin-left: 0;">
+            
+                <li>
+                    <a
+                    
+                        target="_blank"
+                            
+                        href="https://github.com/cayzlh">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse">
+                                
+                            </i>
+                          </span>
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                    
+                        target="_blank"
+                            
+                        href="https://twitter.com/Q2F5emxo">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse">
+                                
+                            </i>
+                          </span>
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                    
+                        target="_blank"
+                            
+                        href="mailto:xxxxxx@mail.com">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa  fa-stack-1x fa-inverse">
+                                邮
+                            </i>
+                          </span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+        <div class="site-footer-links mobile-hidden">
+            
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        本站总访问量<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>次
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_uv" style='display:none'>
+                      访客数<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>人次
+                    </span>
+                
+            
+        </div>
+
+        <div class="site-footer-links mobile-hidden">
+        
+            <span class="meta-info-index hvr-grow">
+                
+            </span>
+        
+        
+        </div>
+
+        
+            <div class="scrolltop">
+                <a href="javascript:window.scrollTo(0,0)">TOP</a>
+            </div>
+        
+
+        
+        <div class="rss">
+            <a href="/atom.xml" target="_blank"><span class="octicon octicon-rss" style="color:orange;"></span></a>
+            Power by <a href="https://github.com/cayzlh/hexo-theme-yummy" target="_blank">hexo-theme-yummy</a>
+        </div>
+        
+    </div>
+    
+
+    
+        <!-- Third-Party JS -->
+        <script type="text/javascript"
+                src="/js/thirdparty/geopattern.min.js"></script>
+        <!-- My JS -->
+        <script type="text/javascript" src="/js/script.js"></script>
+    
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+        </script>
+    
+</footer>
+</body>
+</html>
