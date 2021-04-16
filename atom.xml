@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Yummy Demo</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-02-28T20:55:08.000Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/03/01/hello-world/"/>
+    <id>http://example.com/2021/03/01/hello-world/</id>
+    <published>2021-02-28T20:55:08.000Z</published>
+    <updated>2021-02-28T20:55:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>API签名验证方案</title>
+    <link href="http://example.com/2020/09/29/API%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88/"/>
+    <id>http://example.com/2020/09/29/API%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88/</id>
+    <published>2020-09-29T08:45:11.000Z</published>
+    <updated>2021-04-10T06:06:49.791Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="接口安全问题"><a href="#接口安全问题" class="headerlink" title="接口安全问题"></a>接口安全问题</h2><ul><li>请求身份是否合法？</li><li>请求参数是否被篡改？</li><li>请求是否唯一？</li></ul><h2 id="AccessKey-amp-SecretKey-（开放平台）"><a href="#AccessKey-amp-SecretKey-（开放平台）" class="headerlink" title="AccessKey&amp;SecretKey （开放平台）"></a>AccessKey&amp;SecretKey （开放平台）</h2><h3 id="请求身份"><a href="#请求身份" class="headerlink" title="请求身份"></a>请求身份</h3><p>为开发者分配**<code>AccessKey</code><strong>（开发者标识，确保唯一）和</strong><code>SecretKey</code>**（用于接口加密，确保不易被穷举，生成算法不易被猜测）。</p><h3 id="防止篡改"><a href="#防止篡改" class="headerlink" title="防止篡改"></a>防止篡改</h3><p><strong>参数签名</strong></p><ol><li>按照请求参数名的字母升序排列非空请求参数（包含<code>AccessKey</code>），使用<code>URL</code>键值对的格式（即<code>key1=value1&amp;key2=value2…</code>）拼接成字符串stringA；</li><li>在<code>stringA</code>最后拼接上<code>Secretkey</code>得到字符串<code>stringSignTemp</code>；</li><li>对<code>stringSignTemp</code>进行<code>MD5</code>运算，并将得到的字符串所有字符转换为大写，得到<code>sign</code>值。</li></ol><p>请求携带参数**<code>AccessKey</code><strong>和</strong><code>Sign</code><strong>，只有拥有合法的身份<code>AccessKey</code>和正确的签名<code>Sign</code>才能放行。这样就解决了身份验证和参数篡改问题，即使请求参数被劫持，由于获取不到<code>SecretKey</code>（</strong>仅作本地加密使用，不参与网络传输**），无法伪造合法的请求。</p><h3 id="重放攻击"><a href="#重放攻击" class="headerlink" title="重放攻击"></a>重放攻击</h3><p>虽然解决了请求参数被篡改的隐患，但是还存在着重复使用请求参数伪造二次请求的隐患。</p><p><strong>timestamp+nonce方案</strong></p><p><code>nonce</code>指<strong>唯一的随机字符串</strong>，用来标识每个被签名的请求。通过为每个请求提供一个唯一的标识符，服务器能够防止请求被多次使用（记录所有用过的<code>nonce</code>以阻止它们被二次使用）。</p><p>然而，对服务器来说永久存储所有接收到的<code>nonce</code>的代价是非常大的。可以使用**<code>timestamp</code>来优化<code>nonce</code>的存储**。</p><p>假设允许客户端和服务端最多能存在15分钟的时间差，同时追踪记录在服务端的<code>nonce</code>集合。当有新的请求进入时，首先检查携带的<code>timestamp</code>是否在15分钟内，如超出时间范围，则拒绝，然后查询携带的<code>nonce</code>，如存在已有集合，则拒绝。否则，记录该<code>nonce</code>，并删除集合内时间戳大于15分钟的<code>nonce</code>（可以使用<code>redis</code>的<code>expire</code>，新增<code>nonce</code>的同时设置它的超时失效时间为15分钟）。</p><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><pre class="line-numbers language-shell"><code class="language-shell">请求接口：http://api.test.com/test?name=hello&home=world&work=java<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li><p><u><strong>客户端</strong></u></p></li><li><ol><li><p>生成当前时间戳<code>timestamp=now</code>和唯一随机字符串<code>nonce=random</code></p></li><li><p>按照请求参数名的字母升序排列非空请求参数（包含<code>AccessKey</code>)：</p><p><code>stringA=&quot;AccessKey=access&amp;home=world&amp;name=hello&amp;work=java&amp;timestamp=now&amp;nonce=random&quot;;</code></p></li><li><p>拼接密钥<code>SecretKey</code>：</p><p><code>stringSignTemp=&quot;AccessKey=access&amp;home=world&amp;name=hello&amp;work=java&amp;timestamp=now&amp;nonce=random&amp;SecretKey=secret&quot;;</code></p></li><li><p><code>MD5</code>并转换为大写：</p><p><code>sign=MD5(stringSignTemp).toUpperCase();</code></p></li><li><p>最终请求：</p><p><code>http://api.test.com/test?name=hello&amp;home=world&amp;work=java&amp;timestamp=now&amp;nonce=nonce&amp;sign=sign;</code></p></li></ol></li><li><p><strong><u>服务端</u></strong></p><p><img src="https://gitee.com/cayzlh/img-repo/raw/master/2020/09/17024116013701611601370161045.png" alt="image-20200929170240504"></p></li></ul><h2 id="Token-amp-AppKey（APP）"><a href="#Token-amp-AppKey（APP）" class="headerlink" title="Token&amp;AppKey（APP）"></a>Token&amp;AppKey（APP）</h2><p>在<code>APP</code>开放<code>API</code>接口的设计中，由于大多数接口涉及到用户的个人信息以及产品的敏感数据，所以要对这些接口进行身份验证，为了安全起见让用户暴露的明文密码次数越少越好，然而客户端与服务器的交互在请求之间是无状态的，也就是说，当涉及到用户状态时，每次请求都要带上身份验证信息。</p><h3 id="Token身份验证"><a href="#Token身份验证" class="headerlink" title="Token身份验证"></a>Token身份验证</h3><ol><li>用户登录向服务器提供认证信息（如账号和密码），服务器验证成功后**返回<code>Token</code>**给客户端；</li><li>客户端将<code>Token</code>保存在本地，后续发起请求时，<strong>携带此Token</strong>；</li><li>服务器检查<code>Token</code>的有效性，有效则放行，无效（<code>Token</code>错误或过期）则拒绝。</li></ol><p><strong>安全隐患</strong>：<code>Token</code>被劫持，伪造请求和篡改参数。</p><h3 id="Token-AppKey签名验证"><a href="#Token-AppKey签名验证" class="headerlink" title="Token+AppKey签名验证"></a>Token+AppKey签名验证</h3><p>与上面开发平台的验证方式类似，为客户端分配**<code>AppKey</code><strong>（密钥，用于接口加密，不参与传输），将<code>AppKey</code>和所有请求参数组合成源串，根据</strong>签名算法<strong>生成签名值，发送请求时将签名值一起发送给服务器验证。这样，即使<code>Token</code>被劫持，对方不知道<code>AppKey</code>和签名算法，就无法伪造请求和篡改参数。再结合上述的</strong>重发攻击**解决方案，即使请求参数被劫持也无法伪造二次重复请求。</p><h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><p><strong><u>登录和退出请求</u></strong></p><p><img src="https://gitee.com/cayzlh/img-repo/raw/master/2020/09/17105416013706541601370654137.png" alt="image-20200929171053770"></p><p><strong><u>后续请求</u></strong></p><ul><li><p>客户端 和上述开放平台的客户端行为类似，把<code>AccessKey</code>改为<code>token</code>即可。</p></li><li><p>服务端</p><p><img src="https://gitee.com/cayzlh/img-repo/raw/master/2020/09/17140816013708481601370848386.png" alt="image-20200929171408101"></p></li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>  <a href="https://mp.weixin.qq.com/s/QUaLa8oU4B1rCb-8FCs79g">芋道源码</a></li></ul>]]></content>
+    
+    
+    <summary type="html">开放API接口签名验证，让你的接口从此不再裸奔</summary>
+    
+    
+    
+    <category term="笔记本" scheme="http://example.com/categories/%E7%AC%94%E8%AE%B0%E6%9C%AC/"/>
+    
+    
+    <category term="Java" scheme="http://example.com/tags/Java/"/>
+    
+    <category term="接口安全" scheme="http://example.com/tags/%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+</feed>
