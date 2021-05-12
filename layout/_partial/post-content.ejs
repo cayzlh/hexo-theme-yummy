@@ -34,80 +34,70 @@
                 </div>
 
                 <script type="text/javascript">
-                    var getChild = function ($parent) {
-                        var child = {};
-                        child.path = $parent.find("a").attr("href");
-                        child.title = $parent.find("a").find("span").html();
+                  var getChild = function ($parent) {
+                    var child = {};
+                    child.path = $parent.find("a").attr("href");
+                    child.title = $parent.find("a").find("span").html();
 
-                        var $children = $($parent.children("ol").children());
-                        if ($children) {
-                            var children = [];
-                            $children.each(function () {
-                                children.push(getChild($(this)));
-                            });
-                            child.children = children;
-                        }
-                        return child;
+                    var $children = $($parent.children("ol").children());
+                    if ($children) {
+                      var children = [];
+                      $children.each(function () {
+                        children.push(getChild($(this)));
+                      });
+                      child.children = children;
                     }
-                    $(document).ready(function () {
-                        var toc = [];
-                        $("#toc").children().children().each(function () {
-                            toc.push(getChild($(this)));
-                        });
-                        if (toc.length > 0) {
-                            $("#toc").remove();
-                            toc.forEach(function (t) {
-                                $(".post-directory dl").append("<dt><a class=\"jumper\" href="
-                                    + t.path
-                                    + ">"
-                                    + t.title
-                                    + "</a></dt>");
-                                var tc = t.children;
-                                if (tc.length > 0) {
-                                    tc.forEach(function (c) {
-                                        $(".post-directory dl").append(
-                                            "<dd><a class=\"jumper\" href="
-                                            + c.path
-                                            + ">"
-                                            + "&nbsp;&nbsp;- " + c.title
-                                            + "</a></dd>"
-                                        );
-                                    });
-                                }
-                            });
-
-                        }
-                        var fixmeTop = $('#post-directory-module').offset().top - 100;       // get initial position of the element
-
-                        $(window).scroll(function () {                  // assign scroll event listener
-
-                            var currentScroll = $(window).scrollTop(); // get current position
-
-                            if (currentScroll >= fixmeTop) {           // apply position: fixed if you
-                                $('#post-directory-module').css({      // scroll to that element or below it
-                                    top: '100px',
-                                    position: 'fixed',
-                                    width: 'inherit'
-                                });
-                            } else {                                   // apply position: static
-                                $('#post-directory-module').css({      // if you scroll above it
-                                    position: 'inherit',
-                                    width: 'inherit'
-                                });
-                            }
-
-                        });
-
-                        $("a.jumper").on("click", function (e) {
-
-                            e.preventDefault();
-
-                            $("body, html").animate({
-                                scrollTop: ($($(this).attr('href')).offset().top - 100)
-                            }, 600);
-
-                        });
+                    return child;
+                  }
+                  $(document).ready(function () {
+                    var toc = [];
+                    $("#toc").children().children().each(function () {
+                      toc.push(getChild($(this)));
                     });
+                    if (toc.length > 0) {
+                      $("#toc").remove();
+                      toc.forEach(function (t) {
+                        $(".post-directory dl").append("<dt><a class=\"jumper\" href="
+                            + t.path
+                            + ">"
+                            + t.title
+                            + "</a></dt>");
+                        var tc = t.children;
+                        if (tc.length > 0) {
+                          tc.forEach(function (c) {
+                            $(".post-directory dl").append(
+                                "<dd><a class=\"jumper\" href="
+                                + c.path
+                                + ">"
+                                + "&nbsp;&nbsp;- " + c.title
+                                + "</a></dd>"
+                            );
+                          });
+                        }
+                      });
+
+                    }
+                    var fixmeTop = $('#post-directory-module').offset().top - 100;       // get initial position of the element
+
+                    $(window).scroll(function () {                  // assign scroll event listener
+
+                      var currentScroll = $(window).scrollTop(); // get current position
+
+                      if (currentScroll >= fixmeTop) {           // apply position: fixed if you
+                        $('#post-directory-module').css({      // scroll to that element or below it
+                          top: '100px',
+                          position: 'fixed',
+                          width: 'inherit'
+                        });
+                      } else {                                   // apply position: static
+                        $('#post-directory-module').css({      // if you scroll above it
+                          position: 'inherit',
+                          width: 'inherit'
+                        });
+                      }
+
+                    });
+                  });
 
                 </script>
             </div>
@@ -116,14 +106,14 @@
     <% if (theme.readmore.enable && page.readmore) { %>
         <script src="//my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
         <script>
-            const btw = new BTWPlugin();
-            btw.init({
-                id: 'openwrite-container',
-                blogId: '<%- theme.readmore.blogId %>',
-                name: '<%- theme.readmore.name %>',
-                qrcode: '<%- theme.readmore.qrcode %>',
-                keyword: '<%- theme.readmore.keyword %>',
-            });
+          const btw = new BTWPlugin();
+          btw.init({
+            id: 'openwrite-container',
+            blogId: '<%- theme.readmore.blogId %>',
+            name: '<%- theme.readmore.name %>',
+            qrcode: '<%- theme.readmore.qrcode %>',
+            keyword: '<%- theme.readmore.keyword %>',
+          });
         </script>
     <% } %>
     <script>
@@ -140,3 +130,4 @@
       });
     </script>
 </article>
+
