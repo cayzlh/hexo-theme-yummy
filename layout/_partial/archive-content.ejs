@@ -2,7 +2,7 @@
     <ul class="archives-list">
         <%
         var y = 0;
-        page.posts.sort('date', 'desc').forEach(function (post) {
+        site.posts.sort('date', 'desc').forEach(function (post) {
             var dt = post.date;
             var ny = post.date.year();
 
